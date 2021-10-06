@@ -9,26 +9,18 @@ class App extends Component {
       firstName: 'Reggie',
       lastName: 'White'
      }
-    this.names = {
+    this.list = {
       names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kelly']
     }
-    this.stateNames = {
-      nameNumber: 0
-    }
-  }
-  goToNextName = () => {
-    let tempNameNumber = this.stateNames.nameNumber;
-    tempNameNumber++;
-
   }
 
   render() { 
     return ( 
       <div>
         <h1>Names</h1>
-        <hr />
+        <hr />        
         <DisplayNames name={this.state}/>   
-        <NamesList listNames={this.names} nextName={this.goToNextName}/>     
+        <NamesList listNames={this.list.names}/>     
       </div>
      );
   }
