@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import DisplayNames from './components/DisplayNames/DisplayNames';
+import NamesList from './components/DisplayNames/NamesList/NamesList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      firstName: 'Reggie',
+      lastName: 'White'
+     }
+    this.names = {
+      names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kelly']
+    }
+    this.stateNames = {
+      nameNumber: 0
+    }
+  }
+  goToNextName = () => {
+    let tempNameNumber = this.stateNames.nameNumber;
+    tempNameNumber++;
+
+  }
+
+  render() { 
+    return ( 
+      <div>
+        <h1>Names</h1>
+        <hr />
+        <DisplayNames name={this.state}/>   
+        <NamesList listNames={this.names} nextName={this.goToNextName}/>     
+      </div>
+     );
+  }
 }
-
+ 
 export default App;
