@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DisplayNames from './components/DisplayNames/DisplayNames';
 import NamesList from './components/DisplayNames/NamesList/NamesList';
 import AlertUser from './components/DisplayNames/AlertUser/AlertUser';
+import SuperheroTable from './components/DisplayNames/SuperheroTable/SuperheroTable';
 
 
 class App extends Component {
@@ -15,24 +16,24 @@ class App extends Component {
       names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kelly']
     }
     this.hero = {
-      superheroes = [
+      superheroes: [
           {
               superheroId: 1,
               name: 'Batman',
               primaryAbility: 'Wealthy',
-              secondarAbility: 'Rich'
+              secondaryAbility: 'Rich'
           },
           {
               superheroId: 2,
               name: 'Superman',
               primaryAbility: 'Super strength',
-              secondarAbility: 'Fly'
+              secondaryAbility: 'Fly'
           },
           {
               superheroId: 3,
               name: 'Spiderman',
               primaryAbility: 'Spider senses',
-              secondarAbility: 'Shoots web'
+              secondaryAbility: 'Shoots web'
           }
       ]
     }
@@ -51,6 +52,10 @@ class App extends Component {
         <h1>Alert user</h1>
         <hr />        
         <AlertUser alerts={this.alertUser}/>
+        <h1>Super Heroes Table</h1>
+        <hr /> 
+        <SuperheroTable hero={this.hero.superheroes}/>
+
       </div>
      );
   }
